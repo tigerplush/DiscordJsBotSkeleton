@@ -9,6 +9,15 @@ if(!fs.existsSync('./config.json'))
     fs.writeFileSync('./config.json', JSON.stringify(defaultConfig, null, 4));
 }
 
+/**
+ * Create an empty authorization file
+ */
+if(!fs.existsSync('./auth.json'))
+{
+    const emptyAuth = {token: ""};
+    fs.writeFileSync('./auth.json', JSON.stringify(emptyAuth, null, 4));
+}
+
 const Discord = require('discord.js');
 const auth = require('./auth.json');
 const {prefix} = require('./config.json');
