@@ -40,9 +40,9 @@ bot.on('ready', () => {
 bot.on('message', message => {
     if(message.content.startsWith(prefix) && !message.author.bot)
     {
-        const args = message.content.slice(prefix.length).split(/ +/);
 	    const command = args.shift().toLowerCase();
 
+        const args = message.content.slice(prefix.length + 1).split(/ +/);
         if (!bot.commands.has(command))
         {
             return;
